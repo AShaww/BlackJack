@@ -1,33 +1,101 @@
 //
-// Created by AmirS on 25/05/2021.
+// Created by AmirS on 26/05/2021.
 //
 
-#ifndef EASYJACK_GAME_H
-#define EASYJACK_GAME_H
+#pragma once
 
-#include "mainHeader.h"
-#include "Deck.h"
-#include "Player.h"
 
 class Game{
 public:
-      Game();
-      ~Game();
-      void dealCard();
+    Game();
+
+    void playGame();
+    void getName();
+    void title();
+    void instructions();
+    void menu();
+
+    void initialiseGame();
+    void dealCard();
+
+    void displayStatus();
+
+//    vector<Player*> getPlayers();
+
 private:
-    Deck *deck;
     vector<Player*> players;
+    Player* player = new Player;
+    Player* dealer = new Player;
+    Deck* deck = new Deck;
+
+//    vector<Player*> players;
 };
+Game::Game() {
 
-Game::Game() { }
-void Game::dealCard() {
-
-    for (int player = 0; player < players.size(); player++)
-    {
-        players.push_back(players.front());
-
-    }
+    initialiseGame();
+}
+void Game::initialiseGame() {
+    title();
+    menu();
 }
 
 
-#endif //EASYJACK_GAME_H
+void Game::title() {
+    cout << "\tWelcome to Jack Black. A simple Black Jack game! " << endl;
+}
+void Game::playGame() {
+    dealCard();
+
+}
+void Game::dealCard() {
+    deck->popCard(player);
+    displayStatus();
+}
+
+void Game::menu() {
+
+    int input;
+
+    cout << "--------------------------" << endl;
+    cout << "| MENU                   |" << endl;
+    cout << "| 1. START               |" << endl;
+    cout << "| 2. HOW TO PLAY         |" << endl;
+    cout << "| 3. QUIT                |" << endl;
+    cout << "--------------------------" << endl;
+    cout << "" << endl;
+    cout << "Input number for menu item: " << endl;
+    cin >> input;
+    switch (input)
+    {
+        case 1:
+            getName();
+            break;
+        case 2:
+            instructions();
+            break;
+        case 3:
+            exit(1);
+            break;
+        default:
+            cout << "Incorrect input, try again.";
+            menu();
+    }
+}
+
+void Game::getName() {
+    string input;
+    cout << "Please enter your name: " << endl;
+    cin >> input;
+    player->setName(input);
+    cout << "your name is: " << player->getName() << endl;
+
+    playGame();
+
+}
+void Game::instructions() {}
+
+void Game::displayStatus() {
+    cout << player->getName() << "'s hand:" << endl;
+
+    player->printHand();
+}

@@ -1,65 +1,66 @@
 //
-// Created by AmirS on 25/05/2021.
+// Created by AmirS on 26/05/2021.
 //
 
-#ifndef EASYJACK_PLAYER_H
-#define EASYJACK_PLAYER_H
+#pragma once
 
 class Player{
+
 public:
-    Player(string&, vector<Card*>);
+    Player();
     ~Player();
-
-    const string &getName() const;
-    void setName(const string);
-
-    int getHandTotal() const;
-    void setHandTotal(int);
+    int gethandTotal();
+    string getName();
+    vector<Card*> getHand();
+    void sethandTotal(int);
+    void setName(string);
+    void getCard(Card*);
     void printHand();
 
-    vector<Card*> getHand();
+
 private:
     vector<Card*> hand;
-    string name;
     int handTotal;
+    string name;
 };
 
-Player::Player(string& name, vector<Card*> pVector) {
-    this->name = "";
-    this->hand = pVector;
+Player::Player() {
+    hand.reserve(11);
 }
 
 Player::~Player() {
-    for (Card *c : hand)
+    for(Card* card : hand)
     {
-        delete (c);
+        delete (card);
     }
     hand.clear();
 }
 
-vector<Card*> Player::getHand() {
+vector<Card*> Player::getHand(){
     return this->hand;
 }
 
-const string& Player::getName() const{
-    return name;
-}
-void Player::setName(const string nameIn){
-    name = nameIn;
+int Player::gethandTotal() {
+    return this->handTotal;
 }
 
-int Player::getHandTotal() const{
-    return handTotal;
-}
-void Player::setHandTotal(int handTotalIn){
-    handTotal = handTotalIn;
+void Player::sethandTotal(int handTotalIn) {
+    this->handTotal = handTotalIn;
 }
 
-void Player::printHand(){
-    for(Card *c : hand)
+string Player::getName()  {
+    return this->name;
+}
+
+void Player::setName(string name) {
+    this->name = name;
+}
+void Player::getCard(Card* card) {
+    hand.push_back(card);
+}
+void Player::printHand() {
+    for (Card *c : hand)
     {
         c->printCard(c);
     }
 }
-
-#endif //EASYJACK_PLAYER_H

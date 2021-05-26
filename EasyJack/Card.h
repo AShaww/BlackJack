@@ -2,10 +2,8 @@
 // Created by AmirS on 25/05/2021.
 //
 
-#ifndef EASYJACK_CARD_H
-#define EASYJACK_CARD_H
-
 #include "mainHeader.h"
+
 enum Rank{
     ACE = 1, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
 };
@@ -34,8 +32,8 @@ int Card::getValue() const {
         }
         return value;
     }
-
 }
+
 void Card::printCard(Card* card) {
     if (card->rank >= 0 && card->rank <= card->rank) {
         switch (card->rank) {
@@ -95,4 +93,4 @@ void Card::printCard(Card* card) {
         }
     }
 }
-#endif //EASYJACK_CARD_H
+

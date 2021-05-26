@@ -1,16 +1,17 @@
 //
 // Created by AmirS on 25/05/2021.
 //
+#pragma once
 
-#ifndef EASYJACK_MAINHEADER_H
-#define EASYJACK_MAINHEADER_H
+#include <string>
 #include <vector>
 #include <iostream>
-#include <ostream>
+#include <ctime>
 #include <algorithm>
-#include <cstdlib>
-#include <random>
+#include <fstream>
+#include <chrono>
+#include <thread>
 
 using namespace std;
 
-#endif //EASYJACK_MAINHEADER_H
+

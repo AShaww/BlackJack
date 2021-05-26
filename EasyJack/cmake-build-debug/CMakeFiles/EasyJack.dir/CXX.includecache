@@ -11,42 +11,38 @@ mainHeader.h
 C:/Users/AmirS/CLionProjects/EasyJack/mainHeader.h
 
 C:/Users/AmirS/CLionProjects/EasyJack/Deck.h
-
-C:/Users/AmirS/CLionProjects/EasyJack/Game.h
-mainHeader.h
-C:/Users/AmirS/CLionProjects/EasyJack/mainHeader.h
-Deck.h
-C:/Users/AmirS/CLionProjects/EasyJack/Deck.h
+Card.h
+C:/Users/AmirS/CLionProjects/EasyJack/Card.h
 Player.h
 C:/Users/AmirS/CLionProjects/EasyJack/Player.h
+
+C:/Users/AmirS/CLionProjects/EasyJack/Game.h
 
 C:/Users/AmirS/CLionProjects/EasyJack/Player.h
 
 C:/Users/AmirS/CLionProjects/EasyJack/main.cpp
-iostream
--
-Card.h
-C:/Users/AmirS/CLionProjects/EasyJack/Card.h
 Deck.h
 C:/Users/AmirS/CLionProjects/EasyJack/Deck.h
-Game.h
-C:/Users/AmirS/CLionProjects/EasyJack/Game.h
-mainHeader.h
-C:/Users/AmirS/CLionProjects/EasyJack/mainHeader.h
 Player.h
 C:/Users/AmirS/CLionProjects/EasyJack/Player.h
+Game.h
+C:/Users/AmirS/CLionProjects/EasyJack/Game.h
 
 C:/Users/AmirS/CLionProjects/EasyJack/mainHeader.h
+string
+-
 vector
 -
 iostream
 -
-ostream
+ctime
 -
 algorithm
 -
-cstdlib
+fstream
 -
-random
+chrono
+-
+thread
 -
 
