@@ -4,28 +4,36 @@
 
 #pragma once
 
+
+
 class Player{
 
 public:
     Player();
     ~Player();
-    int gethandTotal();
+    int getPlayerHandValue();
     string getName();
-    vector<Card*> getHand();
-    void sethandTotal(int);
     void setName(string);
-    void getCard(Card*);
-    void printHand();
+    int getScore();
+    void setScore(int);
+    int getHandValue();
+    void setHandValue(int);
+    vector<Card*>& getHand();
 
-
+    void hit(Card *card);
+    void showHand();
+    bool hasBlackJack();
+    void clearHand();
+    int calcAce();
 private:
+    const int _MaxCardsPerHand = 11; //11 cards maximum, four ace's, four 2's, three three's. = 21
     vector<Card*> hand;
     int handTotal;
     string name;
 };
 
 Player::Player() {
-    hand.reserve(11);
+    hand.reserve(_MaxCardsPerHand);
 }
 
 Player::~Player() {
@@ -36,16 +44,31 @@ Player::~Player() {
     hand.clear();
 }
 
-vector<Card*> Player::getHand(){
+void Player::clearHand(){
+    hand.clear();
+}
+
+vector<Card*>& Player::getHand(){
     return this->hand;
 }
 
-int Player::gethandTotal() {
-    return this->handTotal;
-}
+int Player::getPlayerHandValue() {
+    int value = 0;
+    int numOfAces = 0;
 
-void Player::sethandTotal(int handTotalIn) {
-    this->handTotal = handTotalIn;
+    if (hand.empty()) {
+        return 0;
+    }
+
+    for (int i = 0; i < hand.size(); i++) {
+        Card *card = hand[i];
+
+        if (card->getValue() == ACE) {
+            numOfAces += 1;
+        }
+        handTotal = value += card->getValue();
+    }
+    return handTotal;
 }
 
 string Player::getName()  {
@@ -55,12 +78,34 @@ string Player::getName()  {
 void Player::setName(string name) {
     this->name = name;
 }
-void Player::getCard(Card* card) {
+
+void Player::hit(Card* card) {
     hand.push_back(card);
 }
-void Player::printHand() {
+
+void Player::showHand() {
     for (Card *c : hand)
     {
-        c->printCard(c);
+        c->printCard( c);
     }
 }
+
+bool Player::hasBlackJack(){
+    for (int i = 0; i < hand.size(); i++)
+    {
+        if(hand[i]->getValue() == ACE)
+        {
+            for(int i = 0; i < hand.size(); i++)
+            {
+                if(hand[i]->getValue() == 10)
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        return false;
+    }
+    return false;
+}
+

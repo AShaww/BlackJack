@@ -1,6 +1,7 @@
 //
 // Created by AmirS on 25/05/2021.
 //
+
 #include "Card.h"
 #include "Player.h"
 
@@ -12,27 +13,17 @@ public:
     ~Deck();
     void shuffle();
     void initialiseDeck();
-    void printDeck();
-    Card* getTopCard();
-    void popCard(Player* pPlayer);
-    vector<Card*> getDeckOfCards();
-
-
+    void giveTopCardTo(Player* pPlayer);
+    vector<Card*>& getDeckOfCards();
 private:
-    const int SIZE = 52;
+    const int _deckSize = 52;
     vector<Card*> deck;
 };
 
 Deck::Deck() {
-    deck.reserve(SIZE);
+    deck.reserve(_deckSize);
     initialiseDeck();
 }
-
-//void Deck::printDeck() {
-//    for (Card *c : deck) {
-//        c->printCard(c);
-//    }
-//}
 
 Deck::~Deck() {
     for (Card *c : deck) {
@@ -54,13 +45,9 @@ void Deck::initialiseDeck() {
     shuffle();
 }
 
-Card* Deck::getTopCard(){
-    return deck.front();
-}
-
-void Deck::popCard(Player* pPlayer) {
+void Deck::giveTopCardTo(Player* pPlayer) {
     Card* card = deck.front();
-    pPlayer->getCard(card);
+    pPlayer->hit(card);
     deck.erase(deck.begin());
 }
 
@@ -69,7 +56,7 @@ void Deck::shuffle() {
     random_shuffle(deck.begin(), deck.end());
 }
 
-vector<Card*> Deck::getDeckOfCards() {
+vector<Card*>& Deck::getDeckOfCards() {
     return this->deck;
 }
 

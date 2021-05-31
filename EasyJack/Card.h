@@ -7,6 +7,7 @@
 enum Rank{
     ACE = 1, TWO, THREE, FOUR, FIVE, SIX, SEVEN, EIGHT, NINE, TEN, JACK, QUEEN, KING
 };
+
 enum Suit{
     HEARTS, DIAMONDS, CLUBS, SPADES
 };
@@ -21,19 +22,28 @@ struct Card{
 };
 
 Card::Card() {}
+
 Card::Card(Rank rank, Suit suit): rank(rank), suit(suit) {}
 
 int Card::getValue() const {
-    int value = 0;
-    while (true) {
-        value = rank;
-        if (value > 10) {
-            value = 10;
-        }
-        return value;
+    switch(rank)
+    {
+        case ACE : return 11;
+        case TWO : return 2;
+        case THREE : return 3;
+        case FOUR : return 4;
+        case FIVE : return 5;
+        case SIX : return 6;
+        case SEVEN : return 7;
+        case EIGHT : return 8;
+        case NINE : return 9;
+        case TEN : return 10;
+        case JACK : return 10;
+        case QUEEN : return 10;
+        case KING : return 10;
     }
+    return 0;
 }
-
 void Card::printCard(Card* card) {
     if (card->rank >= 0 && card->rank <= card->rank) {
         switch (card->rank) {
