@@ -35,7 +35,6 @@ private:
     void checkWinner();
     void endGameMenu();
 
-    vector<Player*> players;
     Player* player = new Player;
     Player* dealer = new Player;
     Deck* deck = new Deck;
