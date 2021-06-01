@@ -13,7 +13,7 @@ public:
     void getName();
     void menu();
     void title();
-    void instructions();
+    void help();
 
     void playGame();
 
@@ -97,7 +97,7 @@ void Game::title() {
     cout << "\tWelcome to Jack Black. A simple Black Jack game! " << endl;
 }
 
-void Game::instructions() {
+void Game::help() {
 
     cout << "The game is simple, closest to 21 wins." << endl;
     cout << "The dealer will keep hitting until 17 or over." << endl;
@@ -127,7 +127,7 @@ void Game::menu() {
             getName();
             break;
         case '2':
-            instructions();
+            help();
             break;
         case '3':
             cout << "YOU HAVE CHOSEN TO EXIT!" << endl;

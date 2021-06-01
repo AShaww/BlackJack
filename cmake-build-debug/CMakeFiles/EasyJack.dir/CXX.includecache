@@ -1,0 +1,46 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/Card.h
+mainHeader.h
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/mainHeader.h
+
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/Deck.h
+Card.h
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/Card.h
+Player.h
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/Player.h
+
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/Game.h
+Deck.h
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/Deck.h
+
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/Player.h
+
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/main.cpp
+Game.h
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/Game.h
+
+C:/Users/AmirS/Documents/GitHub/EasyJack/EasyJack/mainHeader.h
+string
+-
+vector
+-
+iostream
+-
+ctime
+-
+algorithm
+-
+fstream
+-
+chrono
+-
+thread
+-
+

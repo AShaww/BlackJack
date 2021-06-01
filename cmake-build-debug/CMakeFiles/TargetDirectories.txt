@@ -1,0 +1,3 @@
+C:/Users/AmirS/Documents/GitHub/EasyJack/cmake-build-debug/CMakeFiles/EasyJack.dir
+C:/Users/AmirS/Documents/GitHub/EasyJack/cmake-build-debug/CMakeFiles/edit_cache.dir
+C:/Users/AmirS/Documents/GitHub/EasyJack/cmake-build-debug/CMakeFiles/rebuild_cache.dir
