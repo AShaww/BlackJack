@@ -9,6 +9,8 @@
 class Game{
 public:
     Game();
+
+private:
     void initialiseGame();
     void getName();
     void menu();
@@ -32,7 +34,7 @@ public:
     void dealerWin();
     void checkWinner();
     void endGameMenu();
-private:
+
     vector<Player*> players;
     Player* player = new Player;
     Player* dealer = new Player;
@@ -94,7 +96,7 @@ void Game::dealGame() {
 }
 
 void Game::title() {
-    cout << "\tWelcome to Jack Black. A simple Black Jack game! " << endl;
+    cout << "\tWelcome to Easy Jack. A simple Black Jack game! " << endl;
 }
 
 void Game::help() {
@@ -106,10 +108,12 @@ void Game::help() {
 
     cout << "This is for pure entertainment, and not for gambling." << endl;
     cout << "Play responsibly." << endl;
+    system("pause");
+    menu();
 }
 
 void Game::menu() {
-    char input;
+    int input;
 
     cout << "" << endl;
     cout << " MENU" << endl;
@@ -123,13 +127,13 @@ void Game::menu() {
     cin >> input;
     switch (input)
     {
-        case '1' :
+        case 1 :
             getName();
             break;
-        case '2':
+        case 2:
             help();
             break;
-        case '3':
+        case 3:
             cout << "YOU HAVE CHOSEN TO EXIT!" << endl;
             cout << "THANKS FOR PLAYING!" << endl;
             exit(1);
