@@ -4,8 +4,6 @@
 
 #pragma once
 
-
-
 class Player{
 
 public:
@@ -24,7 +22,6 @@ public:
     void showHand();
     bool hasBlackJack();
     void clearHand();
-    int calcAce();
 private:
     const int _MaxCardsPerHand = 11; //11 cards maximum, four ace's, four 2's, three three's. = 21
     vector<Card*> hand;

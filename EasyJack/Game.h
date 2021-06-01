@@ -271,16 +271,16 @@ void Game::stand() {
     dealerMoveCheckWinner();
 }
 void Game::dealerWin(){
-    cout << "\t" << player->getName() << " has Lost!" <<endl;
-    cout << "\t" << dealer->getName() << " has Won!" << endl;
+    cout << "   " << player->getName() << " has Lost!" <<endl;
+    cout << "   " << dealer->getName() << " has Won!" << endl;
     player->clearHand();
     dealer->clearHand();
     endGameMenu();
 }
 
 void Game::playerWin(){
-    cout << "\t" << player->getName() << " has Won!" <<endl;
-    cout << "\t" << dealer->getName() << " has Lost!" << endl;
+    cout << "   " << player->getName() << " has Won!" <<endl;
+    cout << "   " << dealer->getName() << " has Lost!" << endl;
     player->clearHand();
     dealer->clearHand();
     endGameMenu();
@@ -288,7 +288,7 @@ void Game::playerWin(){
 
 void Game::push(){
     cout << endl;
-    cout << " PUSH - NO WINNERS     " << endl;
+    cout << " 'PUSH' - NO WINNERS     " << endl;
     cout << endl;
     system("pause");
     player->clearHand();
@@ -307,7 +307,7 @@ void Game::endGameMenu(){
     switch (input)
     {
     case '1':
-        cout << "NEW DEAL (NEW GAME)" << endl;
+        cout << "'NEW DEAL' (NEW GAME)" << endl;
         playGame();
         break;
     case '2':
