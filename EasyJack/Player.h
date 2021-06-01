@@ -12,10 +12,6 @@ public:
     int getPlayerHandValue();
     string getName();
     void setName(string);
-    int getScore();
-    void setScore(int);
-    int getHandValue();
-    void setHandValue(int);
     vector<Card*>& getHand();
 
     void hit(Card *card);
