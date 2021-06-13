@@ -1,6 +1,6 @@
-# EasyJack
+# BlackJack
 
-# Welcome to Jack Black, a console BlackJack Card game (first to 21).
+# Welcome to BlackJack, a console BlackJack Card game (first to 21).
 
 The standard 52-card pack is used, this rendition of BlackJack will use a single deck of cards.
 
